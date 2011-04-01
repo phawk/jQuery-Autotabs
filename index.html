@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="en">
+<head>
+<!-- title &amp; meta -->
+<title></title>
+<meta charset="UTF-8" />
+
+<!-- stylesheets -->
+<link rel="stylesheet" href="css/reset.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="css/grid.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="css/layout.css" type="text/css" media="screen" />
+
+<!-- javascript -->
+<script src="js/jquery-1.4.4.min.js" type="text/javascript"></script>
+<script src="js/jquery-ui-1.8.11.custom.min.js" type="text/javascript"></script>
+<script type="text/javascript">
+// Runs this function when the page loads
+$(document).ready(structureTabs);
+ 
+function structureTabs()
+{
+// Insert a list to hold the tab buttons
+$('#tabs').prepend('<ul id="tabbtns"></ul>');
+ // Split the content up, starting with each h2 and all other content until the following h2 comes.
+ $('#tabs h2').each(function(index){
+  $(this).nextUntil('h2').andSelf().wrapAll('<div id="tabs-'+(index+1)+'"></div>');
+  var title = $(this).text();
+  $('#tabbtns').append('<li><a href="#tabs-' + (index+1) + '">' + title + '</a></li>');
+ });
+ // Remove the h2 headings.
+ $('#tabs div h2').remove();
+}
+ 
+ 
+jQuery(function() {
+ jQuery("#tabs").tabs();
+});
+</script>
+
+</head>
+
+<body>
+<h1>jQuery Autotabs</h1>
+<p>A jQuery plugin by <a href="http://peteyhawkins.com/journal/post/jquery_autotabs">peteyhawkins.com</a></p>
+
+<div id="tabs">
+	<h2>Lorem ipsum</h2>
+	<p>Auto tabs uses jQuery and jQuery UI to automatically markup your tabs.</p>
+	 
+	<h2>Mauris vitae</h2>
+	<p>Mauris vitae metus eu enim tempor facilisis.</p>
+	 
+	<h2>Sed comodo porta</h2>
+	<p>Sed commodo porta libero.</p>
+	 
+	<h2>Sed innisil</h2>
+	<p>Sed in nisl ac ligula convallis semper.</p>
+</div>
+
+
+</body>
+</html>

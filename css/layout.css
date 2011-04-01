@@ -1,0 +1,84 @@
+/*
+ *	Layout.css
+ */
+
+body{
+	margin: 100px;
+	background: #fff;
+	color: #424242;
+	font-family: Helvetica, Arial, sans-serif;
+}
+
+/* General styles */
+a img{ border: none; }
+
+
+
+/* Tabs
+--------------------------------------------------*/
+/* TABS */
+.ui-tabs .ui-tabs-nav li.ui-tabs-selected a,
+.ui-tabs .ui-tabs-nav li.ui-state-disabled a,
+.ui-tabs .ui-tabs-nav li.ui-state-processing a { cursor: text; }
+ 
+.ui-tabs .ui-tabs-nav li a,
+.ui-tabs.ui-tabs-collapsible .ui-tabs-nav li.ui-tabs-selected a{ cursor: pointer; } /* first selector in group seems obsolete, but required to overcome bug in Opera applying cursor: text overall if defined elsewhere... */
+ 
+.ui-tabs .ui-tabs-panel{
+ display: block;
+ border-width: 0;
+ padding: 20px 30px;
+ background: none;
+ border-bottom: solid 1px #d7d7d7;
+ border-left: solid 1px #d7d7d7;
+ border-right: solid 1px #d7d7d7;
+ background: #fff;
+}
+ 
+.ui-tabs .ui-tabs-hide { display: none !important; }
+ 
+#tabs{
+ margin: 30px 0;
+}
+ 
+#tabs li{
+ margin: 5px;
+}
+ 
+#tabbtns{
+ display: block;
+ margin: 0;
+ padding: 0;
+ height: 39px;
+ border-bottom: solid 1px #d7d7d7;
+ list-style: none;
+}
+ 
+#tabbtns li{
+ float: left;
+ display: block;
+ margin: 0 3px 0 0;
+ padding: 0;
+}
+#tabbtns li a{
+ font-size: 16px;
+ line-height: 1;
+ text-decoration:none;
+ display: inline-block;
+ padding: 13px 20px 10px 20px;
+ color: #424242;
+ background: #efefef;
+}
+ 
+#tabbtns li.ui-tabs-selected{
+ border-top: solid 1px #d7d7d7;
+ border-left: solid 1px #d7d7d7;
+ border-right: solid 1px #d7d7d7;
+ background: #f9f9f9;
+}
+ 
+#tabbtns li.ui-tabs-selected a{
+ color: #000;
+ background: #fff;
+ padding: 12px 20px 11px 20px;
+}
